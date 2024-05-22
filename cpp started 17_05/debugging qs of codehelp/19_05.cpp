@@ -161,19 +161,96 @@ CDE
 BCDE
 ABCDE
 */
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int main() {
-    int i,j,n;;
-    cin>>n;
-    for(i=0;i<=n;i++){
-        char p=65+n-i;
-        for(j=0;j<i;j++){
-            cout<<p;
-            p++;  
+// int main() {
+//     int i,j,n;;
+//     cin>>n;
+//     for(i=0;i<=n;i++){  //solved by changing the values
+//         char p=65+n-i;
+//         for(j=0;j<i;j++){
+//             cout<<p;
+//             p++;  
             
-        }
-        cout<<endl;
-    }
-}
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+//Q7
+/*
+Pattern
+N = 4
+   1
+  232
+ 34543
+4567654
+*/
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row;
+//     cin>>row;
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<row-i-1;j++){
+//             cout<<" ";
+//         }
+//         int p=i+1;
+//         for(int k=0;k<i+1;k++){
+//             cout<<p;
+//             p++;
+//         }
+//         int n=2*i;
+//         for(int m=0;m<=i-1;m++){
+//             cout<<n;
+//             n--;
+//         }
+//         for(int j=0;j<row-i-1;j++){
+//             cout<<" ";
+//         }
+//         cout<<endl;
+
+
+//     }
+// }
+
+
+//Q8 UNSOLVED PLS SOLVE IT LATER (22ND MAY 2024)
+/*
+Pattern
+N = 5
+  *
+ ***
+*****
+ ***
+  *
+*/
+// void printPatt(int n){
+//     int i=1;
+//     while(i<(n)){
+//         int gaps = n-2*i,k=1;
+//         if(i>(n)/2){
+//             int no = (n+1)/2;
+//             gaps = 2*(i%no);
+//         }
+//         while(k<=gaps/2){
+//             cout<<" ";
+//             k = k + 1;
+//         }
+//         int ch = n - 1 - gaps;
+//         while(ch>=1){
+//             cout<<"*";
+//             ch = ch - 1;
+//         }
+//         k = 1;
+//         while(k<=gaps/2){
+//             cout<<" ";
+//             k = k + 1;
+//         }
+//         cout<<"\n";
+//         i = i + 1;
+//     }
+// }
+
