@@ -1,6 +1,5 @@
-//SQUARE
+// //SQUARE
 // #include <iostream>
-
 // using namespace std;
 
 // int main(){
@@ -14,7 +13,7 @@
 
 // }
 
-//RECTANGLE
+// RECTANGLE
 // #include <iostream>
 // using namespace std;
 // int main(){
@@ -28,7 +27,7 @@
 //     }
 // }
 
-//HOLLOW RECTANGLE
+// HOLLOW RECTANGLE
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -52,7 +51,7 @@
 //     }
 // }
 
-//HALF PYRAMID
+// HALF PYRAMID
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -69,7 +68,7 @@
 //     }
 // }
 
-//INVERTED HALF PYRAMID
+// INVERTED HALF PYRAMID
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -81,7 +80,7 @@
 //     }
 // }
 
-//NUMERICAL HALF PYRAMID
+// NUMERICAL HALF PYRAMID
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -96,7 +95,7 @@
 //     }
 // }
 
-//NUMERICAL INVERTED HALF PYRAMID
+// NUMERICAL INVERTED HALF PYRAMID
 // #include<iostream>
 // using namespace std;
 // int main(){

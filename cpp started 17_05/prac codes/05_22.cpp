@@ -1,4 +1,5 @@
-//DIMOND PATTERN
+// //DIMOND PATTERN
+
 // #include<iostream>
 // using namespace std;
 // int main(){

@@ -44,23 +44,23 @@
 // }
 
 //FUNCTION FOR COUNTING 0s AND 1s
-// #include<iostream>
-// using namespace std;
-// void count(int array[],int size,int count1=0,int count0=0){
-//     for(int i=0;i<size;i++){
-//         if(array[i]==0){
-//             count0++;
-//         }
-//         else if (array[i]==1){
-//             count1++;
-//         }
-//     }
-//     cout<<"Count0 = "<<count0<<endl;
-//     cout<<"Count1 = "<<count1;
-// }
-// int main(){
-//     int array[5]={1,1,1,1,1};
-//     int size=5;
-//     count(array,size);
+#include<iostream>
+using namespace std;
+void count(int array[],int size,int count1=0,int count0=0){
+    for(int i=0;i<size;i++){
+        if(array[i]==0){
+            count0++;
+        }
+        else if (array[i]==1){
+            count1++;
+        }
+    }
+    cout<<"Count0 = "<<count0<<endl;
+    cout<<"Count1 = "<<count1;
+}
+int main(){
+    int array[5]={1,1,1,1,1};
+    int size=5;
+    count(array,size);
 
-// }
+}
