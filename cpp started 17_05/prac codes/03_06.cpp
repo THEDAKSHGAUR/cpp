@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-void arrayfunc()
 int main()
 {
     // PRINTING ARRAY ADDRESS
@@ -82,9 +81,7 @@ int main()
     // else
     // {
     //     cout << "Target not found";
-    // }
+    // }  
 
-
-    //FUNCTION FOR THE ARRAY
-
+    // FUNCTION FOR THE ARRAY
 }
