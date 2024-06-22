@@ -1,4 +1,4 @@
-// ARRAYS
+// ARRAYS1
 #include <iostream>
 using namespace std;
 
