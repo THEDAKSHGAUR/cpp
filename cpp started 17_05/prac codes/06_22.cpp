@@ -158,47 +158,48 @@
 // }
 
 
-//SHIFT THE ARRAY BY 1(GIVING ERROR)
-#include<iostream>
-using namespace std;
-int arrinput(int arr[],int n){
-    for(int i=0;i<n;i++){
-        cout<<"enter the element for index "<<i<<" ::";
-        cin>>arr[i];
-    }
-}
-int arrprint(int arr[],int n){
-    cout<<"Your array is :: [ ";
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<"]";
-}
-int arrshift(int arr[],int n,int arr2[]){
-    for(int i=0;i<n;i++){
-        arr2[i+1]=arr[i];
-        if(i==n-1){
-            arr2[0]=arr[i];
-        }
-        
-    }
-}
-int arr2print(int arr2[],int n){
-    for(int i=0;i<n;i++){
-        cout<<arr2[i]<<" ";
-    }
-}
-int main(){
-    int arr2[]={};
-    int arr[]={};
-    int n;
-    cout<<"Enter the number of elements for the array::";
-    cin>>n;
-    arrinput(arr,n);
-    arrprint(arr,n);
-    arrshift(arr,n,arr2);
-    arr2print(arr2,n);
-    return 0;
-}
+// //SHIFT THE ARRAY BY 1(GIVING ERROR)
+// #include <iostream>
+// using namespace std;
+// void arrinput(int arr[], int n) {
+//     for (int i = 0; i < n; i++) {
+//         cout << "Enter the element for index " << i << " :: ";
+//         cin >> arr[i];
+//     }
+// }
+// void arrprint(int arr[], int n) {
+//     cout << "Your array is :: [ ";
+//     for (int i = 0; i < n; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     cout << "]" << endl;
+// }
+// void arrshift(int arr[], int n, int arr2[]) {
+//     for (int i = 0; i < n; i++) {
+//         if(i==n-1){
+//             arr2[0] = arr[n - 1];
+//         }
+//         arr2[i + 1] = arr[i];
+//     }
+// }
+// void arr2print(int arr2[], int n) {
+//     cout << "Shifted array is :: [ ";
+//     for (int i = 0; i < n; i++) {
+//         cout << arr2[i] << " ";
+//     }
+//     cout << "]" << endl;
+// }
+// int main() {
+//     int n;
+//     cout << "Enter the number of elements for the array:: ";
+//     cin >> n;
+//     int arr[n];
+//     int arr2[n];
+//     arrinput(arr, n);
+//     arrprint(arr, n);
+//     arrshift(arr, n, arr2);
+//     arr2print(arr2, n);
+//     return 0;
+// }
 
 

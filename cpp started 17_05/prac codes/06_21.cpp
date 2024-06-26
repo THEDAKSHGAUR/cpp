@@ -82,15 +82,15 @@
 
 
 //REFERENCE VARIABLE AND FUNC CALL
-#include<iostream>
-using namespace std;
-int main(){
-    int n=90;
-    int&a=n;
-    int&b=n;
-    int&c=n;
-    cout<<a<<endl;
-    cout<<b<<endl;
-    cout<<c<<endl;
-    cout<<n<<endl;
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n=90;
+//     int&a=n;
+//     int&b=n;
+//     int&c=n;
+//     cout<<a<<endl;
+//     cout<<b<<endl;
+//     cout<<c<<endl;
+//     cout<<n<<endl;
+// }
