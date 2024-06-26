@@ -176,7 +176,7 @@
 //     return 0;
 // }
 
-// //FINDING MAXIMUM NUMBER IN A 2-D ARRAY
+// /FINDING MAXIMUM NUMBER IN A 2-D ARRAY
 // #include<iostream>
 // #include<limits.h>
 // #include <climits>
@@ -210,7 +210,83 @@
 //     return 0;
 // }
 
-//ROW WISE SUM
+////ROWWISE/COLWISE SUM
+// #include<iostream>
+// using namespace std;
+// void inputArray(int arr[][3],int row,int col){
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             cout<<"enter the value for index "<<i<<","<<j<<" ::";
+//             cin>>arr[i][j];
+//             cout<<endl;
+//         }
+//     }
+// }
+//ROWSUM
+// void rowSum(int arr[][3],int row,int col){
+//     cout<<"ROWSUM IS "<<endl;
+//     for(int i=0;i<row;i++){
+//         int sum=0;
+//         for(int j=0;j<col;j++){
+//             sum=arr[i][j]+sum;
+//         }
+//         cout<<"Sum for "<<i<<" row ::"<<sum<<endl;
+//     }
+// }
+//COLSUM
+// void colSum(int arr[][3],int row,int col){
+//     cout<<"COLSUM IS "<<endl;
+//     for(int i=0;i<col;i++){
+//         int sum=0;
+//         for(int j=0;j<row;j++){
+//             sum=arr[j][i]+sum;
+//         }
+//         cout<<"Sum for "<<i<<" col ::"<<sum<<endl;
+//     }
+// }
+// int main(){
+//     int arr[3][3]={};
+//     int row=3;
+//     int col=3;
+//     inputArray(arr,row,col);
+//     rowSum(arr,row,col);
+//     colSum(arr,row,col);
+//     return 0;
+// }
+
+////DIAGONAL SUM
+// #include<iostream>
+// using namespace std;
+// void inputArray(int arr[][3],int row,int col){
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             cout<<"enter the value for index "<<i<<","<<j<<" ::";
+//             cin>>arr[i][j];
+//             cout<<endl;
+//         }
+//     }
+// }
+// void diagonalSum(int arr[][3],int row,int col,int &sum){
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             if(i==j){
+//                 sum=arr[i][j]+sum;
+//             }
+//         }
+//     }
+//     cout<<"Sum of all diagonal elements :: "<<sum;
+// }
+// int main(){
+//     int sum=0;
+//     int arr[3][3];//define the array properly
+//     int row=3;
+//     int col=3;
+//     inputArray(arr,row,col);
+//     diagonalSum(arr,row,col,sum);
+//     return 0;
+// }
+
+//TRANSPOSE OF A MATRIX
 #include<iostream>
 using namespace std;
 void inputArray(int arr[][3],int row,int col){
@@ -222,21 +298,30 @@ void inputArray(int arr[][3],int row,int col){
         }
     }
 }
-void rowSum(int arr[][3],int row,int col){
-    
+void TransposeArray(int &arr,int row,int col){
     for(int i=0;i<row;i++){
-        int sum=0;
         for(int j=0;j<col;j++){
-            sum=arr[i][j]+sum;
+            arr[i][j]=arr[j][i];
         }
-        cout<<"Sum for "<<i<<"th row ::"<<sum<<endl;
+    }
+}
+void printArray(int arr[][3],int row,int col){
+    cout<<"The transposed array is -"<<endl;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
     }
 }
 int main(){
-    int arr[3][3]={};
+    int arr[3][3];
     int row=3;
     int col=3;
     inputArray(arr,row,col);
-    rowSum(arr,row,col);
+    TransposeArray(arr,row,col);
+    printArray(arr,row,col);
     return 0;
 }
+
+//rectify this tomorrow
