@@ -286,42 +286,41 @@
 //     return 0;
 // }
 
-//TRANSPOSE OF A MATRIX
-#include<iostream>
-using namespace std;
-void inputArray(int arr[][3],int row,int col){
-    for(int i=0;i<row;i++){
-        for(int j=0;j<col;j++){
-            cout<<"enter the value for index "<<i<<","<<j<<" ::";
-            cin>>arr[i][j];
-            cout<<endl;
-        }
-    }
-}
-void TransposeArray(int &arr,int row,int col){
-    for(int i=0;i<row;i++){
-        for(int j=0;j<col;j++){
-            arr[i][j]=arr[j][i];
-        }
-    }
-}
-void printArray(int arr[][3],int row,int col){
-    cout<<"The transposed array is -"<<endl;
-    for(int i=0;i<row;i++){
-        for(int j=0;j<col;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-}
-int main(){
-    int arr[3][3];
-    int row=3;
-    int col=3;
-    inputArray(arr,row,col);
-    TransposeArray(arr,row,col);
-    printArray(arr,row,col);
-    return 0;
-}
-
-//rectify this tomorrow
+////TRANSPOSE OF A MATRIX
+// #include<iostream>
+// using namespace std;
+// void inputArray(int arr[][3],int row,int col){
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             cout<<"enter the value for index "<<i<<","<<j<<" ::";
+//             cin>>arr[i][j];
+//             cout<<endl;
+//         }
+//     }
+// }
+// void TransposeArray(int arr2[][3],int arr[][3],int row,int col){
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             swap(arr[i][j],arr2[j][i]);//dont use =/ use swap.
+//         }
+//     }
+// }
+// void printArray(int arr[][3],int row,int col){
+//     cout<<"The transposed array is -"<<endl;
+//     for(int i=0;i<row;i++){
+//         for(int j=0;j<col;j++){
+//             cout<<arr[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+// int main(){
+//     int arr[3][3];
+//     int arr2[3][3]={};
+//     int row=3;
+//     int col=3;
+//     inputArray(arr,row,col);
+//     TransposeArray(arr2,arr,row,col);
+//     printArray(arr2,row,col);
+//     return 0;
+// }// IN THIS WE CAN ALSO GO WITH 2 TRIANGLE APPROACH IN WHICH WE WILL NOT SHIFT THE DIAGONALS.
