@@ -86,41 +86,41 @@
 //     return 0;
 // }
 
-//Row With Maximum Ones(leet:2643)
-#include<iostream>
-#include<vector>
-#include<limits.h>
-using namespace std;
-vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
-    vector<int>ans;
-    int n=mat.size();
-    int OneCount=INT_MIN;
-    int RowNumber=0;
-    for(int i=0;i<n;i++){
-        int count1=0;
-        for(int j=0;j<mat[i].size();j++){
-            if(mat[i][j]==1){
-                count1++;
-            }  
-        }
-        if(count1>OneCount){//this was the main logic for which was thinking
-                OneCount=count1;
-                RowNumber=i;
-            }
-    }
-    ans.push_back(RowNumber);
-    ans.push_back(OneCount);
-    for(int i=0;i<ans.size();i++){
-        cout<<ans[i]<<" ";
-    }
-    return ans;   
-}
-int main(){
-    vector<vector<int> >mat={
-        {0,1,1},
-        {1,1,1},
-        {0,0,1}
-    };
-    rowAndMaximumOnes(mat);
-    return 0;
-}
+////Row With Maximum Ones(leet:2643)
+// #include<iostream>
+// #include<vector>
+// #include<limits.h>
+// using namespace std;
+// vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
+//     vector<int>ans;
+//     int n=mat.size();
+//     int OneCount=INT_MIN;
+//     int RowNumber=0;
+//     for(int i=0;i<n;i++){
+//         int count1=0;
+//         for(int j=0;j<mat[i].size();j++){
+//             if(mat[i][j]==1){
+//                 count1++;
+//             }  
+//         }
+//         if(count1>OneCount){//this was the main logic for which was thinking
+//                 OneCount=count1;
+//                 RowNumber=i;
+//             }
+//     }
+//     ans.push_back(RowNumber);
+//     ans.push_back(OneCount);
+//     // for(int i=0;i<ans.size();i++){
+//     //     cout<<ans[i]<<" ";
+//     // }
+//     return ans;   
+// }
+// int main(){
+//     vector<vector<int> >mat={
+//         {0,1,1},
+//         {1,1,1},
+//         {0,0,1}
+//     };
+//     rowAndMaximumOnes(mat);
+//     return 0;
+// }

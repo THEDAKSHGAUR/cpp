@@ -156,7 +156,7 @@
 // using namespace std;
 // void rotate(vector<int>& nums, int k) {
 //     int n=nums.size();
-//     vector<int>ans(n);
+//     vector<int>ans(n);//initialising size is important
 //     for(int i=0;i<n;i++){
 //         int newindex=(i+k)%n;//this formula is important
 //         ans[newindex]=nums[i];
