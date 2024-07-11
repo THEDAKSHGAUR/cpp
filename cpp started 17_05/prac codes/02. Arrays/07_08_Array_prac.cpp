@@ -224,30 +224,30 @@
 //     return 0;
 // }
 
-//Maximum average subArray I(Leet:643)
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-double findMaxAverage(vector<int>& nums, int k) {
-    int i=0,j=k-1;
-    int sum=0;
-    for(int y=i;y<=j;y++){
-        sum+=nums[y];
-    }
-    int maxSum=sum;
-    j++;
-    while(j<nums.size()){
-        sum-=nums[i++];
-        sum+=nums[j++];
-        maxSum=max(maxSum,sum);
-    }
-    double avg= maxSum/double(k);
-    cout<<avg;
-}
-int main(){
-    vector<int>nums={1,12,-5,-6,50,3};
-    int k=4;
-    findMaxAverage(nums,k);
-    return 0;
-}
+// //Maximum average subArray I(Leet:643)
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// double findMaxAverage(vector<int>& nums, int k) {
+//     int i=0,j=k-1;
+//     int sum=0;
+//     for(int y=i;y<=j;y++){
+//         sum+=nums[y];
+//     }
+//     int maxSum=sum;
+//     j++;
+//     while(j<nums.size()){
+//         sum-=nums[i++];
+//         sum+=nums[j++];
+//         maxSum=max(maxSum,sum);//this max is important
+//     }
+//     double avg= maxSum/double(k);
+//     cout<<avg;
+// }
+// int main(){
+//     vector<int>nums={1,12,-5,-6,50,3};
+//     int k=4;
+//     findMaxAverage(nums,k);
+//     return 0;
+// }

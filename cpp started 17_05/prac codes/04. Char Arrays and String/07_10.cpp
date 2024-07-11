@@ -114,13 +114,13 @@
 // }
 
 ////STRINGS
-#include<iostream>
-#include<vector>
-using namespace std;
-int main(){
-    string ans;
-    // cin>>ans;
-    getline(cin,ans);
-    cout<<ans;
-    return 0;
-}
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     string ans;//there are multiple utility functions in string by which we can perform multiple functions
+//     // cin>>ans;
+//     getline(cin,ans);
+//     cout<<ans;
+//     return 0;
+// }
