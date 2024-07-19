@@ -1,4 +1,4 @@
-//DUTCH0NATIONAL-FLAG PROBLEM: sort colors(leet:75)
+// //DUTCH0NATIONAL-FLAG PROBLEM: sort colors(leet:75)
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -35,7 +35,7 @@
     // return 0;
 // }
 
-//Rotate Array(leet:189)
+////Rotate Array(leet:189)
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -62,7 +62,7 @@
 //     return 0;
 // }
 
-// //Missing Number(leet:268)(My approach)
+////Missing Number(leet:268)(My approach)
 // #include<iostream>
 // #include<vector>
 // #include<limits.h>
@@ -99,7 +99,7 @@
 //     return 0;
 // }
 
-// //Row With Maximum Ones(leet:2643)
+////Row With Maximum Ones(leet:2643)
 // #include<iostream>
 // #include<vector>
 // #include<limits.h>
@@ -232,7 +232,7 @@
 //     return 0;
 // }
 
-//Find pivot index(leet:724)
+////Find pivot index(leet:724)
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -330,7 +330,6 @@
 // using namespace std;
 // int findDuplicate(vector<int>& nums) {
 //     sort(nums.begin(),nums.end());
-
 //     for(int i=0;i<nums.size()-1;i++){
 //         if(nums[i]==nums[i+1]){
 //             return nums[i];
@@ -342,3 +341,75 @@
 //     return 0;
 // }
 
+////Check if the array is sorted and rotated(Leet: 1752)//can only be done using class
+// #include<iostream>
+// #include<vector>
+// #include<string.h>
+// #include<algorithm>
+// using namespace std;
+// bool check(vector<int>& nums) {
+//     int n=nums.size();
+//     vector<int>B=sort(nums.begin(),nums.end());
+//     int x=0;
+//     int totalRotations=0;
+//     bool rotated;
+//     while(x<n){
+//         if(nums[0] == B[(0+x) % n]){
+//             totalRotations=x;
+//             rotated=true;
+//             break;
+//         }
+//         else{
+//             rotated=false;
+//             x++;
+//         }
+//     }
+//     int pendingRotations=n-totalRotations;
+//     for(int i=0;i<n;i++){
+//         nums[i]=nums[(i+pendingRotations)%n];
+//     }
+//     bool sorted;
+//     for(int i=0;i<n;i++){
+//         if(nums[i]==nums[i+1]){
+//             sorted=true;
+//         }
+//         else{
+//             sorted=false;
+//         }
+//     }
+//     return sorted || rotated;
+// }
+// int main(){
+//     return 0;
+// }
+
+////Plus one(Leet:66)
+// #include<iostream>
+// #include<vector>
+// #include<string.h>
+// #include<algorithm>
+// #include<cmath>
+// using namespace std;
+// vector<int> plusOne(vector<int>& digits) {
+//     int n = digits.size();
+//     digits[n - 1] += 1;
+//     vector<int> ans;
+//     for (int i = n - 1; i >= 0; i--) {
+//         if (digits[i] == 10) {
+//             if (i == 0) {
+//                 ans.push_back(1);
+//                 for (int j = 0; j < n; j++) {
+//                     ans.push_back(digits[j]);
+//                 }
+//                 ans[1]=0;
+//                 return ans;
+//             }
+//             digits[i] = 0;
+//             digits[i - 1] += 1;
+//         }
+//     }
+//     return digits;
+// }
+// int main(){
+//     return 0;
+// }
