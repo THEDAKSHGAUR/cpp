@@ -11,10 +11,8 @@
 //     //base condition
 //     if(n==1 || n==0)
 //     return 1;
-
 //     //recursive call
 //     int therecursion=factorial(n-1);
-    
 //     //processing
 //     int ans= n*therecursion;
 //     return ans;
@@ -99,26 +97,3 @@
 //     return 0;
 // }
 
-//sum of n numbers
-#include<iostream>
-#include<vector>
-#include<string.h>
-#include<algorithm>
-#include<cmath>
-#include<numeric>
-using namespace std;
-int sum(int n){
-    if(n==1){
-        return 1;
-    }
-
-    int thesum= n+sum(n-1);
-
-    return thesum;
-}
-int main(){
-    int n=10;
-    int ans=sum(n);
-    cout<<ans;
-    return 0;
-}

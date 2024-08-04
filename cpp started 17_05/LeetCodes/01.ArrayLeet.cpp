@@ -413,3 +413,102 @@
 // int main(){
 //     return 0;
 // }
+
+////Move Zeros(Leet: 283)
+// #include<iostream>
+// #include<vector>
+// #include<string.h>
+// #include<algorithm>
+// #include<cmath>
+// #include<limits.h>
+// #include<numeric>
+// using namespace std;
+// vector<int> moveZeroes(vector<int>&nums) {
+//         int n=nums.size();
+//         vector<int>ans;
+//         int i=0;
+//         int zeroCount=0;
+//         while(i<n){
+//             if(nums[i]==0){
+//                 zeroCount++;
+//                 i++;
+//             }
+//             else if(nums[i]!=0){
+//                 ans.push_back(nums[i]);
+//                 i++;
+//             }
+//         }
+//         for(int i=0;i<zeroCount;i++){
+//             ans.push_back(0);
+//         }
+//         for(int i=0;i<ans.size();i++){
+//             cout<<ans[i]<<" ";
+//         }
+//         nums=ans;
+//         return nums;
+//     }
+// int main(){
+//     vector<int>nums={0,1,0,3,12};
+//     moveZeroes(nums);
+//     return 0;
+// }
+
+////Max consecutive ones(Leet:136)
+// #include<iostream>
+// #include<vector>
+// #include<string.h>
+// #include<algorithm>
+// #include<cmath>
+// #include<limits.h>
+// #include<numeric>
+// using namespace std;
+// int findMaxConsecutiveOnes(vector<int>& nums) {
+//     nums.push_back(0);
+//     int n=nums.size();
+//     int i=0;
+//     int Maxcount=INT_MIN;
+//     int count=0;
+//     while(i<n){
+//         if(nums[i]==1){
+//             count++;
+//             i++;
+//         }
+//         else{
+//             if(count>Maxcount){
+//                 Maxcount=count;
+//             }
+//             count=0;
+//             i++;
+//         }
+//     }     
+//     return Maxcount;   
+// }
+// int main(){
+//     return 0;
+// }
+
+//Single Number(Leet:136)
+#include<iostream>
+#include<vector>
+#include<string.h>
+#include<algorithm>
+#include<cmath>
+#include<limits.h>
+#include<numeric>
+using namespace std;
+int singleNumber(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    int n=nums.size();
+    int i=0;
+    while(i<n){
+        if(nums[i]==nums[i+1]){
+            i+=2;
+        }
+        else{
+            return nums[i+1];
+        }
+    }
+}
+int main(){
+    return 0;
+}
