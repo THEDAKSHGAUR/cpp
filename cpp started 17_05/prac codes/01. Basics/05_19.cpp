@@ -35,7 +35,6 @@
 //         for(int j=0;j<7;j++){
 //              if(i==0 || i==4){
 //                 cout<<"* ";
-
 //         }
 //         else{
 //             if(j==0 || j==6){
@@ -44,7 +43,6 @@
 //             else{
 //                 cout<<"  ";
 //             }
-
 //         }
 //         }
 //         cout<<endl;
@@ -57,14 +55,11 @@
 // int main(){
 //     int row=5;
 //     int col=5;
-
 //     for(int i=0;i<row;i++){
 //         for(int j=0;j<i+1;j++){
-//             cout<<"* ";
-            
+//             cout<<"* ";    
 //         }
 //         cout<<endl;
-
 //     }
 // }
 

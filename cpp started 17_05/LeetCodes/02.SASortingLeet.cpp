@@ -73,7 +73,7 @@
 //     //     cout<<-1;
 //     // }
 
-//     //we have to use hashing in this code.
+//     //we have to using in this code.
 //     unordered_map<int,int>hash;
 //     for(int i=0;i<n;i++){
 //         hash[arr[i]]++;
