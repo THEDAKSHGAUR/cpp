@@ -1,4 +1,9 @@
-// //reversifing the ordered data
+// // //reversifing the ordered data
+// // //Middle element 
+// // //Insert at the bottom
+// // //reverse the stack(put in the bottom)
+// // //Insert an element in the stack while sorted
+// // //sort the stack
 // #include<iostream>
 // #include<string.h>
 // #include<stack>
@@ -16,7 +21,6 @@
 //     cout<<endl;
 //     return 0;
 // } 
-
 // //Finding middle element of the stack
 // #include<iostream>
 // #include<string.h>
@@ -34,7 +38,6 @@
 //             st.pop();
 //         }
 //         cout<<"The middle element is :: "<<st.top()<<endl;
-    
 //     }
 // }
 // void findMiddle(stack<int>&st,int &pos,int &ans){
@@ -82,7 +85,6 @@
 //     cout<<"Middle element is :: "<<ans<<endl;
 //     return 0;
 // }
-
 // //Insert data in the starting
 // #include<iostream>
 // #include<stack>
