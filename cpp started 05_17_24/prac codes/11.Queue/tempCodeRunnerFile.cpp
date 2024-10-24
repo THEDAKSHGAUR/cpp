@@ -1,2 +1,2 @@
- cqt.push(20);
-    cqt.print();
+    q.push(40);
+    q.push(50);
