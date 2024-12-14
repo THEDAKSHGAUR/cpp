@@ -7,7 +7,6 @@
 //     int data;
 //     Node *left;
 //     Node *right;
-    
 //     Node(int val){
 //         this->data=val;
 //         this->left=NULL;
@@ -28,7 +27,6 @@
 //     //right subtree
 //     cout<<"for right node "<<root->data<<endl;
 //     root->right=createTree();
-
 //     return root;
 // }
 // void preOrderTraversal(Node *root){
