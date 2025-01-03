@@ -36,6 +36,62 @@ using namespace std;
 //         }
 //         return;
 //     }
+////optimal approach to solve this q
+void setZeroes(vector<vector<int>>& matrix){
+    int rowSize=matrix.size();
+    int colSize=matrix[0].size();
+    for(int i=1;i<rowSize;i++){
+        for(int j=1;j<colSize;j++){
+            int element=matrix[i][j];
+            if(element==0){
+                matrix[0][j]=-1;
+                matrix[i][0]=-1;
+            }
+        }
+    }
+    for(int j=1;j<colSize;j++){
+        if(matrix[0][j]==0 || matrix[0][j]==-1){
+            for(int i=1;i<rowSize;i++){
+                matrix[i][j]=0;
+            }
+        }
+    }
+    for(int i=1;i<rowSize;i++){
+        if(matrix[i][0]==0 || matrix[i][0]==-1){
+            for(int j=1;j<colSize;j++){
+                matrix[i][j]=0;
+            }
+        }
+    }
+    //let the row 0 be 0
+    if(matrix[0][0]==0){
+        for(int jcol=1;jcol<colSize;jcol++){
+            matrix[0][jcol]=0;
+        }
+    }
+    for(int j=1;j<colSize;j++){
+        if(matrix[0][j]==-1)matrix[0][j]=0;
+        if(matrix[0][j]==0){
+            for(int jcol=1;jcol<colSize;jcol++){
+                matrix[0][jcol]=0;
+            }
+            break;
+        }
+    }
+    //let the col 0 be 0
+    if(matrix[0][0]==0){
+        for(int i=1;i<rowSize;i++){
+            matrix[i][0]=0;
+        }
+        return;
+    }
+    for(int i=1;i<rowSize;i++){
+        if(matrix[i][0]==-1)matrix[i][0]=0;
+        if(matrix[i][0]==0){
+            for(int icol=1;icol<rowSize;icol++)matrix[icol][0]=0;
+        }
+    }
+}
 int main(){
     return 0;
 }
