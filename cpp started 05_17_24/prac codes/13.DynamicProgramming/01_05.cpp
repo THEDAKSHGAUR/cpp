@@ -42,13 +42,33 @@ int optimizedSpaceTab(int n, int k){
     }
     return curr;
 }
+//0-1 knapsack
+int recKnapsack(int wt[],int profit[],int capacity,int index, int n){
+    if(wt<=0 || index>=n){
+        return 0;
+    }
+    int include=0;
+    if(wt[index]<=capacity){
+        include=profit[index]+recKnapsack(wt,profit,capacity-wt[index],index+1,n);
+    }
+    int exclude=0+recKnapsack(wt,profit,capacity,index+1,n);
+    int ans=max(include,exclude);
+    return ans;
+}
 int main(){
-    int n=1;
-    int k=2;
-    vector<int>dp(n+1,-1);
+    // int n=1;
+    // int k=2;
+    // vector<int>dp(n+1,-1);
     // int ans=solvingUsingTopDown(n,k,dp);
-    // int ans=solvingUsingTab(n,k);
-    int ans=optimizedSpaceTab(n,k);
+    // // int ans=solvingUsingTab(n,k);
+    // int ans=optimizedSpaceTab(n,k);
+    // cout<<ans<<endl;
+    int capacity=50;
+    int wt[]={10,20,30};
+    int profit[]={60,100,120};
+    int index=0;
+    int n=3;
+    int ans=recKnapsack(wt,profit,capacity,index,n);
     cout<<ans<<endl;
     return 0;
 }
