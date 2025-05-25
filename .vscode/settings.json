@@ -10,6 +10,7 @@
         "*.tcc": "cpp",
         "unordered_map": "cpp",
         "functional": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "ostream": "cpp"
     }
 }
