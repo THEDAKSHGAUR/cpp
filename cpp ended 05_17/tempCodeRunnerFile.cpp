@@ -1,0 +1,9 @@
+g.createEdge(1,4,0);
+    g.createEdge(1,9,0);
+    g.createEdge(2,3,0);
+    g.createEdge(3,4,0);
+    g.createEdge(4,5,0);
+    g.createEdge(5,7,0);
+    g.createEdge(5,6,0);
+    g.createEdge(5,8,0);
+    g.createEdge(8,9,0);
