@@ -513,4 +513,227 @@
 //     }
 // };
 
+// //strongly connected components-kosaraju's algo(tuf)
+// class Solution {
+//   public:
+//     void dfs(int i, vector<int>&vis, stack<int>&st, vector<vector<int>> &adj){
+//         vis[i]=1;
+//         for(auto it: adj[i]){
+//             if(!vis[it]){
+//                 dfs(it,vis,st,adj);
+//             }
+//         }
+//         st.push(i);
+//     }
+//     void dfs2(int node, vector<int>&vis, vector<int>adjT[]){
+//         vis[node]=1;
+//         for(auto it: adjT[node]){
+//             if(!vis[it])dfs2(it, vis, adjT);
+//         }
+//     }
+//     int kosaraju(vector<vector<int>> &adj) {
+//         // code here
+//         //creating visited array, creating stack, using dfs to fill the stack
+//         int v=adj.size();
+//         vector<int>vis(v,0);
+//         stack<int>st;
+//         for(int i=0;i<v;i++){
+//             if(!vis[i]){
+//                 dfs(i,vis,st,adj);
+//             }
+//         }
+//         //intializing adjT(traverse);
+//         vector<int>adjT[v];
+//         for(int i=0;i<v;i++){
+//             vis[i]=0;
+//             for(auto it: adj[i]){
+//                 adjT[it].push_back(i);
+//             }
+//         }
+//         //finding number of scc 
+//         int scc=0;
+//         while(!st.empty()){
+//             int node=st.top();
+//             st.pop();
+//             if(!vis[node]){
+//                 scc++;
+//                 dfs2(node,vis,adjT);
+//             }
+//         }
+//         return scc;
+//     }
+// };
 
+// //Dijkstra's Algo(tuf)
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> shortestPath(vector<vector<int>> &edges){
+//     int sizer=INT_MIN;
+//     int src=0;
+//     for(int i=0;i<edges.size();i++){
+//         sizer = max({sizer, edges[i][0], edges[i][1]});
+//     }
+//     vector<list<pair<int,int>>>graph(sizer+1);
+//     for(int i=0;i<edges.size();i++){
+//         int x=edges[i][0];
+//         int y=edges[i][1];
+//         int dist=edges[i][2];
+//         graph[x].push_back({y,dist});
+//     }
+//     // int size=graph.size();
+//     //now we have to run dijkstra algo over the new graph
+//     vector<int>dist(sizer+1,INT_MAX);
+//     set<pair<int,int>>st;//the set will be having node following with distance.
+//     //intializing the set and the dist vector
+//     dist[src]=0;
+//     st.insert({0,src});
+//     //applying while condition
+//     while(!st.empty()){
+//         auto topEle=st.begin();
+//         pair<int,int>frontPair=*topEle;
+//         int frontDist=frontPair.first;
+//         int frontNode=frontPair.second;
+//         st.erase(topEle);
+//         for(auto nbrPair : graph[frontNode]){
+//             int nbrNode=nbrPair.first;
+//             int nbrDist=nbrPair.second;
+//             if(frontDist+nbrDist<dist[nbrNode]){
+//                 auto PreviousEntry=st.find({dist[nbrNode],nbrNode});
+//                 if(PreviousEntry!=st.end()){
+//                     st.erase(PreviousEntry);
+//                 }
+//                 dist[nbrNode]=frontDist+nbrDist;
+//                 st.insert({dist[nbrNode],nbrNode});
+//             }
+//         }
+//     }
+//     return dist;
+// }
+// int main(){
+//     int dest=5;
+//     vector<vector<int>>edges={{0,1,2}, {1,4,5}, {1,2,4}, {0,3,1}, {3,2,3},{2,4,1}};
+//     vector<int>dist=shortestPath(edges);
+//     for(int i=0;i<dest;i++){
+//         cout<<dist[i]<<" ";
+//     }
+//     return 0;
+// }
+
+// //Bellman Ford's Algo(tuf)
+// class Solution {
+//   public:
+    // vector<int> bellmanFord(int V, vector<vector<int>>& edges, int src) {
+    //     // Code here
+    //     vector<int>dist(V,1e8);
+    //     dist[src]=0;
+    //     for(int i=0; i<=V; i++){
+    //         for(auto section : edges){
+    //             int u=section[0];
+    //             int v=section[1];
+    //             int wt=section[2];
+    //             if(dist[u]!=1e8 && dist[u]+wt<dist[v]){
+    //                 dist[v]=dist[u]+wt;
+    //             }
+    //         }
+    //     }
+//         //checking for negetive cylce;
+//         for(auto section : edges){
+//             int u=section[0];
+//             int v=section[1];
+//             int wt=section[2];
+//             if(dist[u]!=1e8 && dist[u]+wt<dist[v]){
+//                 return {-1};
+//             }
+//         }
+//         return dist;
+//     }
+// };
+
+// //floyd warshell's algo
+// class Solution {
+//   public:
+//     void floydWarshall(vector<vector<int>> &dist){ 
+//         int n = dist.size();
+//         for(int k = 0; k < n; ++k){
+//             for(int i = 0; i < n; ++i){
+//                 for(int j = 0; j < n; ++j){
+//                     // Prevent integer overflow
+//                     if (dist[i][k] != 1e8 && dist[k][j] != 1e8) {
+//                         dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// };
+
+//Prim's algo(tuf)(sde sheet)
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool allTrue(vector<bool>&done){
+    for(int i=0;i<done.size();i++){
+        if(!done[i])return false;
+    }
+    return true;
+}
+int spanningTree(int V, vector<vector<int>> adj) {
+    //we do have to make the adjlst;
+    unordered_map<int,list<pair<int,int>>>adjlst;
+    for (auto edge : adj) {
+        int u = edge[0];
+        int v = edge[1];
+        int wt = edge[2];
+        adjlst[u].push_back({v, wt});
+        adjlst[v].push_back({u, wt});
+    }
+    //code the prim's algo now;
+    vector<bool>done(V,false);
+    vector<int>parent(V,-2);
+    vector<int>dist(V,1e8);
+    //intialize for the initial condition;
+    // done[0]=true;
+    parent[0]=-1;
+    dist[0]=0;
+    //start the while loop till all the done are true;
+    while(!allTrue(done)){
+        int minVal=1e8;
+        int index=-1;
+        for (int i = 0; i < V; i++) {
+            if (!done[i] && dist[i] < minVal) {
+                minVal = dist[i];
+                index = i;
+            }
+        }
+        if (index == -1) break;
+        done[index]=true;
+        for(auto neigh: adjlst[index]){
+            int node=neigh.first;
+            int disst=neigh.second;
+            if(!done[node]){
+                if(dist[node]>disst){
+                    dist[node]=disst;
+                    parent[node]=index;
+                }
+            }
+        }
+    }
+    // for(int i=0;i<dist.size();i++){
+    //     cout<<"node : "<<i<<" distance : "<<dist[i]<<endl;
+    // }
+    // cout<<endl;
+    // for(int i=0;i<parent.size();i++){
+    //     cout<<"child : "<<i<<" parent"<<parent[i]<<endl;
+    // }
+    int count=0;
+    for(int i=0;i<V;i++){
+        count+=dist[i];
+    }
+    return count;
+}
+int main(){
+    int v=5;
+    vector<vector<int>>arr={{0, 1, 2}, {0, 2, 1}, {1, 2, 1}, {2, 3, 2}, {3, 4, 1}, {4, 2, 2}};
+    spanningTree(v,arr);
+}
