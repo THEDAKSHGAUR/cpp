@@ -668,72 +668,72 @@
 //     }
 // };
 
-//Prim's algo(tuf)(sde sheet)
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-bool allTrue(vector<bool>&done){
-    for(int i=0;i<done.size();i++){
-        if(!done[i])return false;
-    }
-    return true;
-}
-int spanningTree(int V, vector<vector<int>> adj) {
-    //we do have to make the adjlst;
-    unordered_map<int,list<pair<int,int>>>adjlst;
-    for (auto edge : adj) {
-        int u = edge[0];
-        int v = edge[1];
-        int wt = edge[2];
-        adjlst[u].push_back({v, wt});
-        adjlst[v].push_back({u, wt});
-    }
-    //code the prim's algo now;
-    vector<bool>done(V,false);
-    vector<int>parent(V,-2);
-    vector<int>dist(V,1e8);
-    //intialize for the initial condition;
-    // done[0]=true;
-    parent[0]=-1;
-    dist[0]=0;
-    //start the while loop till all the done are true;
-    while(!allTrue(done)){
-        int minVal=1e8;
-        int index=-1;
-        for (int i = 0; i < V; i++) {
-            if (!done[i] && dist[i] < minVal) {
-                minVal = dist[i];
-                index = i;
-            }
-        }
-        if (index == -1) break;
-        done[index]=true;
-        for(auto neigh: adjlst[index]){
-            int node=neigh.first;
-            int disst=neigh.second;
-            if(!done[node]){
-                if(dist[node]>disst){
-                    dist[node]=disst;
-                    parent[node]=index;
-                }
-            }
-        }
-    }
-    // for(int i=0;i<dist.size();i++){
-    //     cout<<"node : "<<i<<" distance : "<<dist[i]<<endl;
-    // }
-    // cout<<endl;
-    // for(int i=0;i<parent.size();i++){
-    //     cout<<"child : "<<i<<" parent"<<parent[i]<<endl;
-    // }
-    int count=0;
-    for(int i=0;i<V;i++){
-        count+=dist[i];
-    }
-    return count;
-}
-int main(){
-    int v=5;
-    vector<vector<int>>arr={{0, 1, 2}, {0, 2, 1}, {1, 2, 1}, {2, 3, 2}, {3, 4, 1}, {4, 2, 2}};
-    spanningTree(v,arr);
-}
+// //Prim's algo(tuf)(sde sheet)
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool allTrue(vector<bool>&done){
+//     for(int i=0;i<done.size();i++){
+//         if(!done[i])return false;
+//     }
+//     return true;
+// }
+// int spanningTree(int V, vector<vector<int>> adj) {
+//     //we do have to make the adjlst;
+//     unordered_map<int,list<pair<int,int>>>adjlst;
+//     for (auto edge : adj) {
+//         int u = edge[0];
+//         int v = edge[1];
+//         int wt = edge[2];
+//         adjlst[u].push_back({v, wt});
+//         adjlst[v].push_back({u, wt});
+//     }
+//     //code the prim's algo now;
+//     vector<bool>done(V,false);
+//     vector<int>parent(V,-2);
+//     vector<int>dist(V,1e8);
+//     //intialize for the initial condition;
+//     // done[0]=true;
+//     parent[0]=-1;
+//     dist[0]=0;
+//     //start the while loop till all the done are true;
+//     while(!allTrue(done)){
+//         int minVal=1e8;
+//         int index=-1;
+//         for (int i = 0; i < V; i++) {
+//             if (!done[i] && dist[i] < minVal) {
+//                 minVal = dist[i];
+//                 index = i;
+//             }
+//         }
+//         if (index == -1) break;
+//         done[index]=true;
+//         for(auto neigh: adjlst[index]){
+//             int node=neigh.first;
+//             int disst=neigh.second;
+//             if(!done[node]){
+//                 if(dist[node]>disst){
+//                     dist[node]=disst;
+//                     parent[node]=index;
+//                 }
+//             }
+//         }
+//     }
+//     // for(int i=0;i<dist.size();i++){
+//     //     cout<<"node : "<<i<<" distance : "<<dist[i]<<endl;
+//     // }
+//     // cout<<endl;
+//     // for(int i=0;i<parent.size();i++){
+//     //     cout<<"child : "<<i<<" parent"<<parent[i]<<endl;
+//     // }
+//     int count=0;
+//     for(int i=0;i<V;i++){
+//         count+=dist[i];
+//     }
+//     return count;
+// }
+// int main(){
+//     int v=5;
+//     vector<vector<int>>arr={{0, 1, 2}, {0, 2, 1}, {1, 2, 1}, {2, 3, 2}, {3, 4, 1}, {4, 2, 2}};
+//     spanningTree(v,arr);
+// }
