@@ -444,3 +444,25 @@
 //         return ans;
 //     }
 // };
+
+// //length of the longest subarray with zero sum(tuf)
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int findThelen(vector<int>arr){
+    int maxNum=0;
+    int sum=0;
+    unordered_map<int,int>sumNumMap;
+    for(int i=0;i<arr.size();i++){
+        sum +=arr[i];
+        if(sum==0)maxNum=i+1;
+        else if(sumNumMap.find(sum)!=sumNumMap.end())maxNum=max(maxNum,i-sumNumMap[sum]);
+        else sumNumMap[sum]=i;
+    }
+    return maxNum;
+}
+int main(){
+    vector<int>arr={6, -2, 2, -8, 1, 7, 4, -10};
+    int ans=findThelen(arr);
+    cout<<ans;
+}
